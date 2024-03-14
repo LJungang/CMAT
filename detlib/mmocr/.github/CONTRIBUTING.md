@@ -1,0 +1,1 @@
+We appreciate all contributions to improve MMOCR. Please read [Contribution Guide](https://mmocr.readthedocs.io/en/dev-1.x/notes/contribution_guide.html) for step-by-step instructions to make a contribution to MMOCR, and [CONTRIBUTING.md](https://github.com/open-mmlab/mmcv/blob/master/CONTRIBUTING.md) in MMCV for more details about the contributing guideline.
