@@ -1,0 +1,5 @@
+{
+    "db_factor":{"_type":"uniform", "_value":[0, 10]},
+    "dbpp_factor":{"_type":"uniform", "_value":[0, 10]},
+    "pse_factor":{"_type":"uniform", "_value":[0, 10]}
+}
