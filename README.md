@@ -1,10 +1,10 @@
 # CMAT
 
-A Cross-Model Adversarial Texture for Scanned Document Privacy Protection.
+This repository is the official implementation of CMAT:A Cross-Model Adversarial Texture for Scanned Document Privacy Protection.
 
 ## Install
 
-- step 1. please follow the installation instructions of T-SEA to create a conda environment
+- Step 1. please follow the installation instructions of T-SEA to create a conda environment
 
   ```bash
   conda create -n text-attack python=3.7
@@ -34,7 +34,7 @@ pip uninstall pillow
 pip install "pillow<7"
 ```
 
-## Attack 
+## Attack
 
 First of all, modify the line 15 of `configs/parallel.yaml`，add the DETECTOR which you need：
 
@@ -97,3 +97,17 @@ https://download.openmmlab.com/mmocr/textdet/psenet/psenet_r50_fpnf_600e_icdar20
 ```
 
 where, you can set perturbation as the path of your perturbation file. After the run is complete, you can see the test result of the test set image in show-dir.
+
+## Dataset
+
+We provide the dataset AdvDocument which mentioned in our paper and used in our project.Our datasets are annotated according to the COCO format.
+
+You can download AdvDocument by the [link](https://drive.google.com/file/d/1r4scB0HvLdz1NLinWI0KClqyyF8UrWnN/view?usp=drive_link "Google Drive").
+
+### Display
+
+![AdvDocument-Word-Display](image/README/1710387307709.png "AdvDocument-Word-Display")
+
+## Citation
+
+Please cite us if you decide to use our code for any part of your research.
