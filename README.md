@@ -1,4 +1,8 @@
-# Install 
+# CMAT
+
+A Cross-Model Adversarial Texture for Scanned Document Privacy Protection.
+
+## Install
 
 - step 1. please follow the installation instructions of T-SEA to create a conda environment
 
@@ -7,7 +11,6 @@
   conda activate text-attack
   pip install -r requirements.txt
   ```
-
 - Step 2. please follow the build-from-source instructions to install mmocr
 
   ```bash
@@ -19,8 +22,7 @@
   pip install -v -e .
   ```
 
-  然后请回到项目根目录，将./base.py替换到conda环境的lib/python3.7/site-packages/mmdet/models/detectors/
-
+  and then go back to the root of the project，replace `lib/python3.7/site-packages/mmdet/models/detectors/base.py`with our `./base.py`
 - Step 3. please install the following packets
 
 ```python
@@ -32,21 +34,21 @@ pip uninstall pillow
 pip install "pillow<7"
 ```
 
-## 攻击代码
+## Attack 
 
-首先，请修改configs/parallel.yaml的15行，在name中填上所需的检测器：
+First of all, modify the line 15 of `configs/parallel.yaml`，add the DETECTOR which you need：
 
 ```bash
-DETECTOR: #在这里填入需要的检测器
+DETECTOR: #add the DETECTOR which you need
  NAME: ["PS_IC15"] #,"PS_CTW","PANET_IC15","PANET_CTW"]
  WEIGHT: [1.0, 1.0, 1.0] #Model loss Weight
 ```
 
-#### 单模型 / 多模型 - 不综合模型loss：
+### Single Model / Multy Model (However, no model loss weighting is performed)：
 
-请将weight设为全1.0
+Please,set all weight to 1.0
 
-请运行train.sh，在tensorboard中，以及results/crop.log检查结果，训练得到的扰动保存在/results/crop。
+and then run `train.sh`，you can check the results in tensorboard(or `results/crop.log`), also you will find the perturbation checkpoint in `/results/crop`.
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 nohup python train_optim_text.py \
@@ -54,9 +56,9 @@ CUDA_VISIBLE_DEVICES=0 nohup python train_optim_text.py \
 -np >./results/crop.log 2>&1 &
 ```
 
-#### 多模型 - 综合模型loss：
+#### Multy Model(Model loss weighting is performed)：
 
-请运行train_parallel.sh
+Run `train_parallel.sh`
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 nohup python train_parallel_text.py \
@@ -64,9 +66,9 @@ CUDA_VISIBLE_DEVICES=0 nohup python train_parallel_text.py \
 -np >./results/parallel.log 2>&1 &
 ```
 
-## 搜索权重
+## Searching Weight
 
-使用nnictl搜索最好的Model loss weight：
+Search the best model loss weight with nnictl：
 
 ```
 nnictl create --config ./nni_config.yaml 
@@ -74,24 +76,24 @@ nnictl create --config ./nni_config.yaml
 
 ## Evaluation
 
-首先，修改detlib/mmocr/configs/_base_/det_datasets/icdar2015.py中的data_root为数据集目录，修改test部分的pipeline：
+Set `data_root ` which is in `detlib/mmocr/configs/_base_/det_datasets/icdar2015.py` as dir of your dataset中的data_root，change the pipeline in test：
 
 ```python
 test = dict(
     type=dataset_type,
-    ann_file=f'{data_root}/[json文件名]',
-    img_prefix=f'{data_root}/[Image目录名]',
+    ann_file=f'{data_root}/[json file name]',
+    img_prefix=f'{data_root}/[Image dir name]',
     pipeline=None)
 ```
 
-接下来，就可以在项目根目录下运行test.sh，得到Psenet-IC15上的测试结果：
+then，run `test.sh` in the root directory of the project，which makes you get the test result on Psenet-IC15：
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python detlib/mmocr/tools/test_attack.py \
 detlib/mmocr/configs/textdet/psenet/psenet_r50_fpnf_600e_icdar2015_adv.py \
 https://download.openmmlab.com/mmocr/textdet/psenet/psenet_r50_fpnf_600e_icdar2015_pretrain-eefd8fe6.pth \
---eval hmean-iou --perturbation [扰动路径]
---show --show-dir [保存路径]
+--eval hmean-iou --perturbation [perturbation file path]
+--show --show-dir [the path saved the result]
 ```
 
-其中，perturbation修改为**扰动文件的路径。**运行结束后，可以在show-dir下看到测试集图片的检测结果。
+where, you can set perturbation as the path of your perturbation file. After the run is complete, you can see the test result of the test set image in show-dir.
