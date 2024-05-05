@@ -76,7 +76,7 @@ nnictl create --config ./nni_config.yaml
 
 ## Evaluation
 
-Set `data_root ` which is in `detlib/mmocr/configs/_base_/det_datasets/icdar2015.py` as dir of your dataset中的data_root，change the pipeline in test：
+Set `data_root ` which is in `detlib/mmocr/configs/_base_/det_datasets/icdar2015.py` as dir of your dataset，change the pipeline in test：
 
 ```python
 test = dict(
