@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="CMAT: A Cross-Model Adversarial Texture for Scanned Document Privacy Protection">
+  <meta name="keywords" content="Adversarial Texture, Privacy Protection">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CMAT: A Cross-Model Adversarial Texture for Scanned Document Privacy Protection</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/VDIGPKU/T-SEA">
+            T-SEA
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">CMAT: A Cross-Model Adversarial Texture for Scanned Document Privacy Protection</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Xiaoyu Ye<sup>1</sup>,</span>
+            <span class="author-block">
+              Jingjing Yu<sup>2,*</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/LJungang">Jungang Li</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Yiwen Zhao<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Qiutong Liu<sup>2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Peking University,</span>
+            <span class="author-block"><sup>2</sup>Capital University of Economics and Business</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>Corresponding Author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/LJungang/CMAT"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://drive.google.com/file/d/1r4scB0HvLdz1NLinWI0KClqyyF8UrWnN/view?usp=drive_link"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            With the development of 
+            deep learning-based text detection and recognition, extracting text from smartphone-captured or 
+            scanned images has become effortless. However, this convenience gives rise to privacy concerns, 
+            especially for individuals and organizations unwilling to let their documents be read and analyzed 
+            by deep learning models. 
+          </p>
+          <p>
+            We propose a novel solution for scanned document privacy protection. First, we propose a cross-model universal adversarial texture that mimics natural paper textures to 
+            safeguard scanned document images against multiple text detection models. Second, we curate a comprehensive 
+            dataset of scanned financial documents, including line-level and character-level text annotations for 
+            both English and Chinese documents, thereby providing diverse data for evaluating our protection method. 
+          </p>
+          <p>
+            Experimental results indicate a significant reduction in H-mean scores of various text detection models, 
+            demonstrating the efficacy of our cross-model universal adversarial texture in preserving document privacy. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <h2 class="title is-3">Method</h2>
+        <div class="has-text-centered">
+          <img src="./static/images/main_00.png"
+               class="interpolation-image"
+               alt="Interpolate start reference image."/>
+          <p style="padding-bottom: 20px;">Our pipeline to craft the cross-model adversarial texture.</p>
+        </div>
+        We use Toroidal Cropping(TC) in generating and optimizing arbitrary size adv texture 
+        and leverage the Tree-structured Parzen Estimator Approach(TPE) to search for optimal model weights.
+        More details please refer to our paper.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Dataset</h2>
+    <div class="columns is-centered">
+      
+      <div class="column is-3">
+        <div class="has-text-centered">
+          <img src="./static/images/annotation_00.png" style="width: 150px;"
+              class="interpolation-image"
+              alt="Interpolate start reference image."/>
+          <p>Scanned page sample with annotations in our dataset.</p>
+        </div>
+      </div>
+      <div class="column is-3">
+        Our dataset, <a href="https://drive.google.com/file/d/1r4scB0HvLdz1NLinWI0KClqyyF8UrWnN/view?usp=drive_link">AdvFinDocument</a>, is collected from publicly available business annual reports, 
+        characterized by the form of financial sensitive documents.
+      </div>
+      <div class="column is-3">
+        It contains both English and 
+        Chinese scanned PDF pages, elaborately labeled with character-level and line-level text detection 
+        bounding box annotations, enabling it to be a benchmark for future work's efficiency testing.
+      </div>
+    </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+ 
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Experiment</h2>
+
+        <!-- Interpolating. -->
+        <div class="has-text-centered">
+          <img src="./static/images/table1.png" style="width: 800px;"
+               class="interpolation-image"
+               alt="Interpolate start reference image."/>
+          <p style="padding-bottom: 20px;">Cross-model attack.</p>
+        </div>
+        <p>
+        Results show a balanced and efficient attack to three text detection models on both the benchmark dataset FUNSD and our proposed AdvFinDocument.
+        </p>
+        <h3 class="title is-4" style="padding-top: 20px;">Attack &epsilon;</h3>
+        <div class="content has-text-justified">
+          <p>
+            We explore the effect of textures with different degrees of perturbation on PSENet textline object detection. 
+            Results show even the perturbation is very small, the proposed adversarial texture can still hide the 
+            majority of the text, revealing the effectiveness of the proposed method.
+          </p>
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="has-text-centered">
+            <img src="./static/images/start_original.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Clean</p>
+          </div>
+          <div class="has-text-centered">
+            <img src="./static/images/stack/001.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>&epsilon;=0.05</p>
+          </div>
+          <div class="has-text-centered">
+            <img src="./static/images/stack/002.jpg"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."/>
+            <p>&epsilon;=0.06</p>
+          </div>
+          <div class="has-text-centered">
+            <img src="./static/images/stack/003.jpg"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."/>
+            <p>&epsilon;=0.07</p>
+          </div>
+          <div class="has-text-centered">
+            <img src="./static/images/stack/004.jpg"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."/>
+            <p>&epsilon;=0.08</p>
+          </div>
+          <div class="has-text-centered">
+            <img src="./static/images/end_e009.png"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">&epsilon;=0.09</p>
+          </div>
+        </div>
+        <br/>
+        <!--/ Interpolating. -->
+        <h3 class="title is-4">Model Weight</h3>
+        <div class="content has-text-justified">
+          <p>
+            With the inclusion of weights, the attack performance on all three models became more balanced, 
+            and the overall attack performance improves.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+    </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+     
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            These excellent works have inspired us.
+          </p>
+          <p>
+            <a href="https://github.com/VDIGPKU/T-SEA">T-SEA: Transfer-based Self-Ensemble Attack on Object Detection</a> A framework provided to achieve universal (cross model&instance) patch-based adversarial attack.
+          </p>
+          <p>
+            <a href="https://arxiv.org/pdf/2203.03373">Adversarial texture for fooling person detectors in the physical world</a> Proposed Toroidal Cropping (TC) to generate continuous adversarial texture in arbitrary size.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{,
+  author    = {},
+  title     = {},
+  journal   = {},
+  year      = {},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/LJungang/CMAT" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
