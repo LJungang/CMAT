@@ -25,14 +25,14 @@ This repository is the official implementation of CMAT:A Cross-Model Adversarial
   and then go back to the root of the project，replace `lib/python3.7/site-packages/mmdet/models/detectors/base.py`with our `./base.py`
 - Step 3. please install the following packets
 
-```python
- pip install Image
- pip install jupyter
-
-#  if error about PIL exist, please uninstall pillow and re-install it with lower version
-pip uninstall pillow
-pip install "pillow<7"
-```
+  ```python
+   pip install Image
+   pip install jupyter
+  
+  #  if error about PIL exist, please uninstall pillow and re-install it with lower version
+  pip uninstall pillow
+  pip install "pillow<7"
+  ```
 
 ## Attack
 
