@@ -110,4 +110,12 @@ You can download AdvDocument by the [link](https://drive.google.com/file/d/1r4sc
 
 ## Citation
 
-Please cite us if you decide to use our code for any part of your research.
+Please cite this repo if you decide to use our code for any part of your research.
+```latex
+@misc{Ye2024CMAT
+  author={Xiaoyu Ye, Jingjing Yu, Jungang Li, Yiwen Zhao, Qiutong Liu},
+  title={CMAT:A Cross-Model Adversarial Texture for Scanned Document Privacy Protection},
+  year={2024},
+  url={https://github.com/LJungang/CMAT}
+}
+```
