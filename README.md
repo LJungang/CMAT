@@ -2,6 +2,8 @@
 [![Google Drive](https://upload.wikimedia.org/wikipedia/commons/1/1f/Google_Drive_logo.png)](https://drive.google.com/file/d/1r4scB0HvLdz1NLinWI0KClqyyF8UrWnN/view "Dataset")
 This repository is the official implementation of CMAT:A Cross-Model Adversarial Texture for Scanned Document Privacy Protection.
 
+[Paper](https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=5194026)
+
 ## Install
 
 - Step 1. please follow the installation instructions of T-SEA to create a conda environment
