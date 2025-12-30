@@ -1,18 +1,43 @@
+
 <div align="center">
-
-# **CMAT: Cross-Model Adversarial Texture for Scanned Document Privacy Protection**
-
-[![Paper (Applied Soft Computing, 2025)](https://img.shields.io/badge/Paper-Applied%20Soft%20Computing%202025-blue)](https://doi.org/10.1016/j.asoc.2025.114353)
-[![Dataset - AdvDocument](https://img.shields.io/badge/Dataset-AdvDocument-orange)](https://drive.google.com/file/d/1r4scB0HvLdz1NLinWI0KClqyyF8UrWnN/view?usp=drive_link)
-[![Project Website](https://img.shields.io/badge/Project-Homepage-9cf)](https://ljungang.github.io/CMAT/)
-
+  <h2>
+    <a href="https://ljungang.github.io/CMAT/">
+      CMAT: Cross-Model Adversarial Texture for Scanned Document Privacy Protection
+    </a>
+  </h2>
 </div>
 
-This repository is the official implementation of:
+<p align="center">
+  <a href="https://openreview.net/profile?id=~Xiaoyu_Ye1">Xiaoyu Ye</a><sup>1</sup>,
+  <a href="https://jrx.cueb.edu.cn//szll/jsml/2adaa433df324c97a51d0b547256d7b1.htm">Jingjing Yu</a><sup>2*</sup>,
+  <a href="https://github.com/LJungang">Jungang Li</a><sup>1</sup>,
+    <a href="https://tsukasane.github.io/">Yiwen Zhao</a><sup>1</sup>
+</p>
 
-> **CMAT: A Cross-Model Adversarial Texture for Scanned Document Privacy Protection**
+<p align="center">
+  <sup>1</sup>Peking University&nbsp;&nbsp;
+  <sup>2</sup>Capital University of Economics and Business
+</p>
 
-CMAT generates powerful, transferable adversarial textures specifically designed to protect scanned document privacy. These perturbations degrade the performance of multiple OCR text detection models while preserving readability for human viewers.
+<p align="center">
+  <em>* Corresponding Author</em>
+</p>
+
+<div align="center">
+  <p align="center">
+    &nbsp&nbsp📑 <a href="https://doi.org/10.1016/j.asoc.2025.114353"><b>Paper (Applied Soft Computing 2025)</b></a>&nbsp&nbsp |
+    &nbsp&nbsp📂 <a href="https://drive.google.com/file/d/1r4scB0HvLdz1NLinWI0KClqyyF8UrWnN/view?usp=drive_link"><b>Dataset (AdvDocument)</b></a>&nbsp&nbsp |
+    &nbsp&nbsp🏠 <a href="https://ljungang.github.io/CMAT/"><b>Project Page</b></a>&nbsp&nbsp
+  </p>
+
+  <p align="center">
+    This repository provides the official implementation of CMAT, a cross-model adversarial texture designed to protect scanned document privacy by degrading OCR text detection performance while maintaining human readability.
+  </p>
+
+  <p align="center">
+    If you find this work useful, please consider giving us a ⭐ to support our research.
+  </p>
+</div>
 
 ---
 
@@ -86,7 +111,7 @@ pip install "pillow<7"
 
 ---
 
-## 🚀 Attack Usage
+##  Attack Usage
 
 ### Configure Detectors
 
@@ -125,7 +150,7 @@ CUDA_VISIBLE_DEVICES=0 nohup python train_parallel_text.py \
 
 ---
 
-## 🔍 Loss Weight Search (NNI)
+##  Loss Weight Search (NNI)
 
 ```bash
 nnictl create --config ./nni_config.yaml
@@ -135,7 +160,7 @@ NNI automatically explores detector loss weight configurations and reports optim
 
 ---
 
-## ✅ Evaluation
+##  Evaluation
 
 Modify:
 
@@ -167,11 +192,11 @@ CUDA_VISIBLE_DEVICES=0 python detlib/mmocr/tools/test_attack.py \
 
 ---
 
-## 📂 AdvDocument Dataset
+##  AdvDocument Dataset
 
 We release the **AdvDocument** dataset used in our experiments (COCO format):
 
-👉 **Download:**  
+ **Download:**  
 https://drive.google.com/file/d/1r4scB0HvLdz1NLinWI0KClqyyF8UrWnN/view?usp=drive_link
 
 ### Example Display
@@ -180,7 +205,7 @@ https://drive.google.com/file/d/1r4scB0HvLdz1NLinWI0KClqyyF8UrWnN/view?usp=drive
 
 ---
 
-## 📜 Citation
+##  Citation
 
 If you use CMAT or AdvDocument in your research, please cite:
 
